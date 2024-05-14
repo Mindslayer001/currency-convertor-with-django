@@ -1,0 +1,273 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Currency Converter</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+            }
+            .container {
+                max-width: 600px;
+                margin: 50px auto;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 5px;
+            }
+            h1 {
+                text-align: center;
+            }
+            label {
+                display: block;
+                margin-bottom: 10px;
+            }
+            input[type="text"] {
+                width: 100%;
+                padding: 8px;
+                margin-bottom: 20px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+            select {
+                width: 100%;
+                padding: 8px;
+                margin-bottom: 20px;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+                box-sizing: border-box;
+            }
+            input[type="submit"] {
+                background-color: #4CAF50;
+                color: white;
+                padding: 10px 20px;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+            }
+            input[type="submit"]:hover {
+                background-color: #45a049;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Currency Converter</h1>
+            <form method="post">
+                {% csrf_token %}
+                <label for="from_currency">From Currency:</label>
+                <select id="from_currency" name="from">
+                    <option value="aave">aave</option>
+                    <option value="abt">abt</option>
+                    <option value="ach">ach</option>
+                    <option value="acs">acs</option>
+                    <option value="ada">ada</option>
+                    <option value="aed">aed</option>
+                    <option value="aergo">aergo</option>
+                    <option value="aero">aero</option>
+                    <option value="aevo">aevo</option>
+                    <option value="afn">afn</option>
+                    <option value="agi">agi</option>
+                    <option value="agix">agix</option>
+                    <option value="agld">agld</option>
+                    <option value="ai">ai</option>
+                    <option value="aioz">aioz</option>
+                    <option value="akt">akt</option>
+                    <option value="alcx">alcx</option>
+                    <option value="aleph">aleph</option>
+                    <option value="alex">alex</option>
+                    <option value="algo">algo</option>
+                    <option value="alice">alice</option>
+                    <option value="all">all</option>
+                    <option value="alph">alph</option>
+                    <option value="alt">alt</option>
+                    <option value="alusd">alusd</option>
+                    <option value="amd">amd</option>
+                    <option value="amp">amp</option>
+                    <option value="ampl">ampl</option>
+                    <option value="ang">ang</option>
+                    <option value="ankr">ankr</option>
+                    <option value="ant">ant</option>
+                    <option value="aoa">aoa</option>
+                    <option value="ape">ape</option>
+                    <option value="apex">apex</option>
+                    <option value="api3">api3</option>
+                    <option value="apl">apl</option>
+                    <option value="apt">apt</option>
+                    <option value="apu">apu</option>
+                    <option value="ar">ar</option>
+                    <option value="arb">arb</option>
+                    <option value="ark">ark</option>
+                    <option value="arkm">arkm</option>
+                    <option value="arpa">arpa</option>
+                    <option value="ars">ars</option>
+                    <option value="asm">asm</option>
+                    <option value="ast">ast</option>
+                    <option value="astr">astr</option>
+                    <option value="ata">ata</option>
+                    <option value="atom">atom</option>
+                    <option value="ats">ats</option>
+                    <option value="auction">auction</option>
+                    <option value="aud">aud</option>
+                    <option value="audio">audio</option>
+                    <option value="aurora">aurora</option>
+                    <option value="avax">avax</option>
+                    <option value="avt">avt</option>
+                    <option value="awg">awg</option>
+                    <option value="axl">axl</option>
+                    <option value="axs">axs</option>
+                    <option value="azero">azero</option>
+                    <option value="azm">azm</option>
+                    <option value="azn">azn</option>
+                    <option value="babydoge">babydoge</option>
+                    <option value="badger">badger</option>
+                    <option value="bake">bake</option>
+                    <option value="bal">bal</option>
+                    <option value="bam">bam</option>
+                    <option value="band">band</option>
+                    <option value="bat">bat</option>
+                    <option value="bbd">bbd</option>
+                    <option value="bch">bch</option>
+                    <option value="bdt">bdt</option>
+                    <option value="bdx">bdx</option>
+                    <option value="beam">beam</option>
+                    <option value="bef">bef</option>
+                    <option value="bgb">bgb</option>
+                    <option value="bgn">bgn</option>
+                    <option value="bhd">bhd</option>
+                    <option value="bico">bico</option>
+                    <option value="bif">bif</option>
+                    <option value="bigtime">bigtime</option>
+                    <option value="bit">bit</option>
+                    <option value="bld">bld</option>
+                    <option value="blur">blur</option>
+                    <option value="blz">blz</option>
+                    <option value="bmd">bmd</option>
+                    <option value="bnb">bnb</option>
+                    <option value="bnd">bnd</option>
+                    <option value="bnt">bnt</option>
+                    <option value="bob">bob</option>
+                    <option value="boba">boba</option>
+                    <option value="boden">boden</option>
+                    <option value="bome">bome</option>
+                    <option value="bond">bond</option>
+                    <option value="bone">bone</option>
+                    <option value="bonk">bonk</option>
+                    <option value="bora">bora</option>
+                    <option value="borg">borg</option>
+                </select>
+                
+
+                <label for="to_currency">To Currency:</label>
+                <select id="to_currency" name="to">
+                    <option value="aave">aave</option>
+                    <option value="abt">abt</option>
+                    <option value="ach">ach</option>
+                    <option value="acs">acs</option>
+                    <option value="ada">ada</option>
+                    <option value="aed">aed</option>
+                    <option value="aergo">aergo</option>
+                    <option value="aero">aero</option>
+                    <option value="aevo">aevo</option>
+                    <option value="afn">afn</option>
+                    <option value="agi">agi</option>
+                    <option value="agix">agix</option>
+                    <option value="agld">agld</option>
+                    <option value="ai">ai</option>
+                    <option value="aioz">aioz</option>
+                    <option value="akt">akt</option>
+                    <option value="alcx">alcx</option>
+                    <option value="aleph">aleph</option>
+                    <option value="alex">alex</option>
+                    <option value="algo">algo</option>
+                    <option value="alice">alice</option>
+                    <option value="all">all</option>
+                    <option value="alph">alph</option>
+                    <option value="alt">alt</option>
+                    <option value="alusd">alusd</option>
+                    <option value="amd">amd</option>
+                    <option value="amp">amp</option>
+                    <option value="ampl">ampl</option>
+                    <option value="ang">ang</option>
+                    <option value="ankr">ankr</option>
+                    <option value="ant">ant</option>
+                    <option value="aoa">aoa</option>
+                    <option value="ape">ape</option>
+                    <option value="apex">apex</option>
+                    <option value="api3">api3</option>
+                    <option value="apl">apl</option>
+                    <option value="apt">apt</option>
+                    <option value="apu">apu</option>
+                    <option value="ar">ar</option>
+                    <option value="arb">arb</option>
+                    <option value="ark">ark</option>
+                    <option value="arkm">arkm</option>
+                    <option value="arpa">arpa</option>
+                    <option value="ars">ars</option>
+                    <option value="asm">asm</option>
+                    <option value="ast">ast</option>
+                    <option value="astr">astr</option>
+                    <option value="ata">ata</option>
+                    <option value="atom">atom</option>
+                    <option value="ats">ats</option>
+                    <option value="auction">auction</option>
+                    <option value="aud">aud</option>
+                    <option value="audio">audio</option>
+                    <option value="aurora">aurora</option>
+                    <option value="avax">avax</option>
+                    <option value="avt">avt</option>
+                    <option value="awg">awg</option>
+                    <option value="axl">axl</option>
+                    <option value="axs">axs</option>
+                    <option value="azero">azero</option>
+                    <option value="azm">azm</option>
+                    <option value="azn">azn</option>
+                    <option value="babydoge">babydoge</option>
+                    <option value="badger">badger</option>
+                    <option value="bake">bake</option>
+                    <option value="bal">bal</option>
+                    <option value="bam">bam</option>
+                    <option value="band">band</option>
+                    <option value="bat">bat</option>
+                    <option value="bbd">bbd</option>
+                    <option value="bch">bch</option>
+                    <option value="bdt">bdt</option>
+                    <option value="bdx">bdx</option>
+                    <option value="beam">beam</option>
+                    <option value="bef">bef</option>
+                    <option value="bgb">bgb</option>
+                    <option value="bgn">bgn</option>
+                    <option value="bhd">bhd</option>
+                    <option value="bico">bico</option>
+                    <option value="bif">bif</option>
+                    <option value="bigtime">bigtime</option>
+                    <option value="bit">bit</option>
+                    <option value="bld">bld</option>
+                    <option value="blur">blur</option>
+                    <option value="blz">blz</option>
+                    <option value="bmd">bmd</option>
+                    <option value="bnb">bnb</option>
+                    <option value="bnd">bnd</option>
+                    <option value="bnt">bnt</option>
+                    <option value="bob">bob</option>
+                    <option value="boba">boba</option>
+                    <option value="boden">boden</option>
+                    <option value="bome">bome</option>
+                    <option value="bond">bond</option>
+                    <option value="bone">bone</option>
+                    <option value="bonk">bonk</option>
+                    <option value="bora">bora</option>
+                    <option value="borg">borg</option>
+                </select>
+
+                <label for="amount">Amount:</label>
+                <input type="text" id="amount" name="amount" placeholder="Enter amount..." required>
+
+                <input type="submit" value="Convert">
+            </form>
+        </div>
+    </body>
+    </html>
